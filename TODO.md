@@ -1,0 +1,2 @@
+- [ ] Compare to Python
+  - [ ] accelerate?
