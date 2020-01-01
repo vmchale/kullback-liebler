@@ -1,6 +1,7 @@
 module information (M: real) = {
 
   open M
+  -- TODO: trim zeros?
 
   let scale [n] (x: [n]M.t): [n]M.t =
     let tot = sum x
@@ -16,11 +17,28 @@ module information (M: real) = {
 module information_f32 = information f32
 module information_f64 = information f64
 
-entry entropy_scaled_f32 (x: []f32) : f32 =
-  information_f32.entropy(information_f32.scale x)
+entry entropy_f32 : []f32 -> f32 =
+  information_f32.entropy
 
--- Entropy (unscaled)
+entry entropy_f64 : []f64 -> f64 =
+  information_f64.entropy
+
+entry kullback_liebler_f32 : []f32 -> []f32 -> f32 =
+  information_f32.kullback_liebler
+
+entry kullback_liebler_f64 : []f64 -> []f64 -> f64 =
+  information_f64.kullback_liebler
+
+-- TODO: bench should scale inputs?
+
+-- Entropy bench
 -- ==
--- entry: entropy_scaled_f32
--- input { [1.0f32, 2.0f32, 3.0f32] }
--- output { 1.011404f32 }
+-- entry: kullback_liebler_f32
+-- compiled random input { [10000000]f32 [10000000]f32 }
+-- auto output
+
+-- Entropy bench (64-bit floats)
+-- ==
+-- entry: kullback_liebler_f64
+-- compiled random input { [10000000]f64 [10000000]f64 }
+-- auto output
