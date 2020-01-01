@@ -27,3 +27,4 @@ futhark bench information.fut --backend opencl --runs=100
 | Kullback-Liebler Divergence | 10000000 | Python + Futhark | 94.07 ms |
 | Entropy | 10000000 | Python (SciPy) | 233.45 ms |
 | Kullback-Liebler Divergence | 10000000 | Python (SciPy) | 340.83 ms |
+| Entropy | 10000000 | J | 227.37 ms |
