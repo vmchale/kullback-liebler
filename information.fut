@@ -26,14 +26,17 @@ entry entropy_scaled_f64 (x: []f64) : f64 =
 entry kullback_liebler_f64 : []f64 -> []f64 -> f64 =
   information_f64.kullback_liebler
 
+entry kullback_liebler_scaled_f64 (x: []f64) (y: []f64) : f64 =
+  information_f64.kullback_liebler (information_f64.scale x) (information_f64.scale y)
+
 -- Kullback-Liebler bench (64-bit floats)
 -- ==
--- entry: kullback_liebler_f64
+-- entry: kullback_liebler_scaled_f64
 -- compiled random input { [10000000]f64 [10000000]f64 }
 -- auto output
 
 -- Entropy bench (64-bit floats)
 -- ==
--- entry: entropy_f64
+-- entry: entropy_scaled_f64
 -- compiled random input { [10000000]f64 }
 -- auto output
