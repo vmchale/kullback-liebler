@@ -2,3 +2,4 @@ data
 *.c
 *.actual
 *.expected
+__pycache__
