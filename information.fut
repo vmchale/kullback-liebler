@@ -1,7 +1,6 @@
 module information (M: real) = {
 
   open M
-  -- TODO: trim zeros?
 
   let scale [n] (x: [n]M.t): [n]M.t =
     let tot = sum x
@@ -18,22 +17,14 @@ module information (M: real) = {
 module information_f32 = information f32
 module information_f64 = information f64
 
-entry entropy_f32 : []f32 -> f32 =
-  information_f32.entropy
-
 entry entropy_f64 : []f64 -> f64 =
   information_f64.entropy
 
 entry entropy_scaled_f64 (x: []f64) : f64 =
   information_f64.entropy(information_f64.scale(x))
 
-entry kullback_liebler_f32 : []f32 -> []f32 -> f32 =
-  information_f32.kullback_liebler
-
 entry kullback_liebler_f64 : []f64 -> []f64 -> f64 =
   information_f64.kullback_liebler
-
--- TODO: bench should scale inputs?
 
 -- Kullback-Liebler bench (64-bit floats)
 -- ==
