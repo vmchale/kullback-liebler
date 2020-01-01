@@ -3,3 +3,4 @@ data
 *.actual
 *.expected
 __pycache__
+information.py
