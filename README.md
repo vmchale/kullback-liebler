@@ -14,5 +14,5 @@ python harness.py
 and
 
 ```
-futhark bench information.fut --backend opencl
+futhark bench information.fut --backend opencl --runs=100
 ```
