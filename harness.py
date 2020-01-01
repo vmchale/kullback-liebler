@@ -17,6 +17,7 @@ normal1 = pre_normal1 / np.sum(pre_normal1)
 print('Entropy (Futhark)', timeit.timeit('mod.entropy_f64(normal0)', setup=setup_fut, number=100) * 10, "ms")
 print('Scaled entropy (Futhark)', timeit.timeit('mod.entropy_scaled_f64(pre_normal0)', setup=setup_fut, number=100) * 10, "ms")
 print('Kullback-Liebler (Futhark)', timeit.timeit('mod.kullback_liebler_f64(normal0, normal1)', setup=setup_fut, number=100) * 10, "ms")
+print('Scaled K-L divergence (Futhark)', timeit.timeit('mod.kullback_liebler_scaled_f64(pre_normal0, pre_normal1)', setup=setup_fut, number=100) * 10, "ms")
 
 setup_scipy = """
 from scipy.stats import entropy
@@ -30,5 +31,5 @@ normal0 = pre_normal0 / np.sum(pre_normal0)
 normal1 = pre_normal1 / np.sum(pre_normal1)
 """
 
-print('Entropy (scipy)', timeit.timeit('entropy(normal0)', setup=setup_scipy, number=100) * 10, "ms")
-print('Kullback-Liebler (scipy)', timeit.timeit('entropy(normal0, normal1)', setup=setup_scipy, number=100) * 10, "ms")
+print('Entropy (scipy)', timeit.timeit('entropy(pre_normal0)', setup=setup_scipy, number=100) * 10, "ms")
+print('Kullback-Liebler (scipy)', timeit.timeit('entropy(pre_normal0, pre_normal1)', setup=setup_scipy, number=100) * 10, "ms")
