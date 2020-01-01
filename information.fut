@@ -31,12 +31,6 @@ entry kullback_liebler_f64 : []f64 -> []f64 -> f64 =
 
 -- TODO: bench should scale inputs?
 
--- Entropy bench
--- ==
--- entry: kullback_liebler_f32
--- compiled random input { [10000000]f32 [10000000]f32 }
--- auto output
-
 -- Entropy bench (64-bit floats)
 -- ==
 -- entry: kullback_liebler_f64
