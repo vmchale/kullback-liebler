@@ -5,3 +5,6 @@ data
 *.expected
 __pycache__
 information.py
+bin
+include
+lib
