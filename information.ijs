@@ -6,4 +6,4 @@ randGen =: ([: ? 0 $~ ])
 
 randDist =: scale @ randGen
 
-simpleTime =: (6!:2)
+time =: (6!:2)
