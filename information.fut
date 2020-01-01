@@ -1,11 +1,12 @@
-let kullback_liebler [n] (x: [n]f32) (y: [n]f32) : f32 =
-  reduce (+) 0 (map2 (\p q -> p * f32.log (p / q)) x y)
-
 module information (M: real) = {
 
   open M
 
-  let entropy(x: []M.t): M.t =
+  let scale [n] (x: [n]M.t): [n]M.t =
+    let tot = sum x
+      in map (/tot) x
+
+  let entropy (x: []M.t): M.t =
     sum (map (\p -> p * log p) x)
 
   let kullback_liebler [n] (x: [n]M.t) (y: [n]M.t) : M.t =
