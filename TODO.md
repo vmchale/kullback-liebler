@@ -1,2 +1,6 @@
 - [ ] Compare to Python
+  - [x] embed python
   - [ ] accelerate?
+  - [x] J benchmark
+  - [ ] Emu: https://github.com/calebwin/emu
+    - [ ] emu is kind of a disaster lol
