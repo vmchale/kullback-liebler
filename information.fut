@@ -2,14 +2,14 @@ module information (M: real) = {
 
   open M
 
-  let scale [n] (x: [n]M.t): [n]M.t =
+  let scale [n] (x: [n]t): [n]t =
     let tot = sum x
       in map (/tot) x
 
-  let entropy (x: []M.t): M.t =
+  let entropy (x: []t): t =
     negate (sum (map (\p -> p * log p) x))
 
-  let kullback_liebler [n] (x: [n]M.t) (y: [n]M.t) : M.t =
+  let kullback_liebler [n] (x: [n]t) (y: [n]t) : t =
     sum (map2 (\p q -> p * log (p / q)) x y)
 
 }
