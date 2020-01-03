@@ -20,8 +20,8 @@ module information_f64 = information f64
 entry entropy_f64 : []f64 -> f64 =
   information_f64.entropy
 
-entry entropy_scaled_f64 (x: []f64) : f64 =
-  information_f64.entropy(information_f64.scale(x))
+entry entropy_scaled_f64 : []f64 -> f64 =
+  information_f64.entropy <-< information_f64.scale
 
 entry kullback_liebler_f64 : []f64 -> []f64 -> f64 =
   information_f64.kullback_liebler
