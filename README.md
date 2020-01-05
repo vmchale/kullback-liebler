@@ -8,7 +8,7 @@ To run the benchmarks:
 
 ```
 make
-python harness.py
+pipenv run python harness.py
 ```
 
 and
