@@ -6,9 +6,11 @@ module information (M: real) = {
     let tot = sum x
       in map (/tot) x
 
+  -- | Compute the entropy of a distribution
   let entropy (x: []t): t =
     negate (sum (map (\p -> p * log p) x))
 
+  -- | Compute the Kullback-Liebler distribution of two distributions
   let kullback_liebler [n] (x: [n]t) (y: [n]t) : t =
     sum (map2 (\p q -> p * log (p / q)) x y)
 
