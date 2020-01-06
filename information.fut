@@ -31,6 +31,18 @@ entry kullback_liebler_f64 : []f64 -> []f64 -> f64 =
 entry kullback_liebler_scaled_f64 (x: []f64) (y: []f64) : f64 =
   information_f64.kullback_liebler (information_f64.scale x) (information_f64.scale y)
 
+entry entropy_f32 : []f32 -> f32 =
+  information_f32.entropy
+
+entry entropy_scaled_f32 : []f32 -> f32 =
+  information_f32.entropy <-< information_f32.scale
+
+entry kullback_liebler_f32 : []f32 -> []f32 -> f32 =
+  information_f32.kullback_liebler
+
+entry kullback_liebler_scaled_f32 (x: []f32) (y: []f32) : f32 =
+  information_f32.kullback_liebler (information_f32.scale x) (information_f32.scale y)
+
 -- Kullback-Liebler bench (64-bit floats)
 -- ==
 -- entry: kullback_liebler_scaled_f64
