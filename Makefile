@@ -3,13 +3,13 @@
 information.py: information.fut
 	futhark pyopencl --library information.fut
 
-pkg: gpu-entropy/information.py
+pkg: entropy-gpu/information.py
 
-gpu-entropy:
+entropy-gpu:
 	mkdir $@
 
-gpu-entropy/information.py: information.py gpu-entropy
+entropy-gpu/information.py: information.py entropy-gpu
 	cp $< $@
 
 clean:
-	@rm -rf information information.c data information.py gpu-entropy
+	@rm -rf information information.c data information.py entropy-gpu
