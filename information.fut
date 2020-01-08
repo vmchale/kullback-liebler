@@ -1,6 +1,6 @@
 module information (M: real) = {
 
-  open M
+  local open M
 
   let scale [n] (x: [n]t): [n]t =
     let tot = sum x
