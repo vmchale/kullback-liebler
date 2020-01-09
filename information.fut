@@ -2,6 +2,7 @@ module information (M: real) = {
 
   open M
 
+  -- TODO: mutable scale?
   let scale [n] (x: [n]t): [n]t =
     let tot = sum x
       in map (/tot) x
