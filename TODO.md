@@ -4,3 +4,4 @@
   - [x] J benchmark
   - [ ] Emu: https://github.com/calebwin/emu
     - [ ] emu is kind of a disaster lol
+- [ ] https://docs.scipy.org/doc/scipy/reference/stats.html

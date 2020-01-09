@@ -1,6 +1,6 @@
 module information (M: real) = {
 
-  open M
+  local open M
 
   -- TODO: mutable scale?
   let scale [n] (x: [n]t): [n]t =

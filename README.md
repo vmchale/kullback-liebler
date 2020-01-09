@@ -2,6 +2,10 @@
 
 The Kullback-Liebler divergence in Futhark
 
+## Documentation
+
+Documentation is avaiable [here](https://vmchale.github.io/kullback-liebler/).
+
 ## Benchmarks
 
 To run the benchmarks:
