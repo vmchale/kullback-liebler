@@ -1,3 +1,4 @@
+-- | Module containing various information-theoretic functions on (discrete) distributions represented as arrays
 module type information = {
 
   type real
