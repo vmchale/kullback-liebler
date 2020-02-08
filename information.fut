@@ -1,24 +1,40 @@
-module information (M: real) = {
+module type information = {
+
+  type real
+
+  -- TODO: mutable scale?
+  val scale [n]: [n]real -> [n]real
+
+  -- | Compute the entropy of a distribution
+  val entropy [n]: [n]real -> real
+
+  -- | Compute the Kullback-Liebler distribution of two distributions
+  val kullback_liebler [n]: [n]real -> [n]real -> real
+
+}
+
+module mk_information(M: real): (
+  information with real = M.t
+  ) = {
+
+  type real = M.t
 
   local open M
 
-  -- TODO: mutable scale?
-  let scale [n] (x: [n]t): [n]t =
+  let scale (x) =
     let tot = sum x
       in map (/tot) x
 
-  -- | Compute the entropy of a distribution
-  let entropy (x: []t): t =
+  let entropy (x) =
     negate (sum (map (\p -> p * log p) x))
 
-  -- | Compute the Kullback-Liebler distribution of two distributions
   let kullback_liebler [n] (x: [n]t) (y: [n]t) : t =
     sum (map2 (\p q -> p * log (p / q)) x y)
 
 }
 
-module information_f32 = information f32
-module information_f64 = information f64
+module information_f32 = mk_information f32
+module information_f64 = mk_information f64
 
 entry entropy_f64 : []f64 -> f64 =
   information_f64.entropy
