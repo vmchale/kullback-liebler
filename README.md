@@ -1,6 +1,6 @@
 # futhark-kullback-liebler
 
-The Kullback-Liebler divergence in Futhark
+The Kullback-Liebler divergence, Hellinger distance, and alpha-divergence in Futhark
 
 ## Documentation
 
