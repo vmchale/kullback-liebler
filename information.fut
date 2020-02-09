@@ -19,7 +19,7 @@ module type information = {
 
 }
 
-module mk_information(M: float): (
+module mk_information(M: real): (
   information with real = M.t
   ) = {
 
