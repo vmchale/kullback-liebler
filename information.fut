@@ -12,7 +12,7 @@ module type information = {
   -- | Compute the Kullback-Liebler distribution of two distributions
   val kullback_liebler [n]: [n]real -> [n]real -> real
 
-  val alpha_divergence [n]: real -> [n]real -> [n]real -> real
+  val alpha_divergence [n]: (alpha: real) -> [n]real -> [n]real -> real
 
   -- | Hellinger distance
   val hellinger [n]: [n]real -> [n]real -> real
