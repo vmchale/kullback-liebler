@@ -1,10 +1,10 @@
 # futhark-kullback-liebler
 
-The Kullback-Liebler divergence, Hellinger distance, and alpha-divergence in Futhark
+The Kullback-Liebler divergence, Hellinger distance, and alpha-divergence in Futhark.
 
 ## Documentation
 
-Documentation is avaiable [here](https://vmchale.github.io/kullback-liebler/).
+Documentation is available [here](https://vmchale.github.io/kullback-liebler/).
 
 ## Benchmarks
 
