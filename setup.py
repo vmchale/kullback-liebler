@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='entropy-gpu',
-      version='0.2.0',
+      version='0.3.0',
       description='Entropy and K-L divergence on GPU via PyOpenCL',
       long_description=long_description,
       long_description_content_type="text/markdown",
