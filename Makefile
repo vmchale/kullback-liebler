@@ -1,7 +1,7 @@
 .PHONY: clean pkg
 
-information.py: information.fut
-	futhark pyopencl --library information.fut
+information.py: lib/github.com/vmchale/kullback-liebler/information.fut
+	futhark pyopencl --library $< -o information
 
 pkg: entropy-gpu/information.py
 
