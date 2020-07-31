@@ -8,6 +8,9 @@ pkg: entropy-gpu/information.py
 entropy-gpu:
 	mkdir $@
 
+docs/index.html: lib/github.com/vmchale/kullback-liebler/information.fut
+	futhark doc -o $(dir $@) $<
+
 entropy-gpu/information.py: information.py entropy-gpu
 	cp $< $@
 
