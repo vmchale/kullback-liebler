@@ -32,3 +32,9 @@ futhark bench information.fut --backend opencl --runs=100
 | Entropy | 10000000 | Python (SciPy) | 233.45 ms |
 | Kullback-Liebler Divergence | 10000000 | Python (SciPy) | 340.83 ms |
 | Entropy | 10000000 | J | 227.37 ms |
+| Entropy | 10000000 | Haskell Accelerate | 46.27 ms |
+| Kullback-Liebler Divergence | 10000000 | Haskell Accelerate | 70.99 ms |
+
+(Have a look at
+[accelerate-kullback-liebler](https://hub.darcs.net/vmchale/accelerate-kullback-liebler/)
+for details on its benchmarks).
