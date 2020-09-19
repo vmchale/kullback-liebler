@@ -17,5 +17,5 @@ entropy-gpu/information.py: information.py entropy-gpu
 clean:
 	@rm -rf information information.c data information.py entropy-gpu Pipfile.lock
 
-bench:
-	futhark bench lib/github.com/vmchale/kullback-liebler/information.fut --backend opencl
+bench: lib/github.com/vmchale/kullback-liebler/information.fut
+	futhark bench $< --backend opencl
