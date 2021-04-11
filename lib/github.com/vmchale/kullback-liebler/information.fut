@@ -32,7 +32,7 @@ module mk_information(M: real): (
       in map (/tot) x
 
   let entropy (x) =
-    negate (sum (map (\p -> p * log p) x))
+    neg (sum (map (\p -> p * log p) x))
 
   let kullback_liebler (x) (y) =
     sum (map2 (\p q -> p * log (p / q)) x y)
